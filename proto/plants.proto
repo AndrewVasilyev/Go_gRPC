@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+option go_package = "/plants_service_grpc";
+//package GO_gRPC;
+
+
+service PlantResolver{
+
+
+    rpc AddPlantProc(AddPlantRequest) returns (AddPlantResponse){}
+
+    rpc GetPlantsProc(GetPlantsRequest) returns (GetPlantsResponse){}
+
+    rpc GetPlantByIdProc(GetPlantByIdRequest) returns (GetPlantByIdResponse){}
+
+    rpc UpdatePlantByIdProc(UpdatePlantByIdRequest) returns (UpdatePlantByIdResponse){}
+
+    rpc DeletePlantByIdProc(DeletePlantByIdRequest) returns (DeletePlantByIdResponse){}
+
+}
+
+
+message AddPlantRequest{
+    bytes data = 1; 
+}
+
+message AddPlantResponse{
+    bytes data = 1;
+    bytes error = 2;   
+}
+
+message GetPlantsRequest{
+    bytes data = 1;    
+}
+
+message GetPlantsResponse{
+    bytes data = 1;
+    bytes error = 2;     
+}
+
+message GetPlantByIdRequest{
+    bytes data = 1;  
+}
+
+message GetPlantByIdResponse{
+    bytes data = 1;
+    bytes error = 2;   
+}
+
+message UpdatePlantByIdRequest{
+    bytes data = 1;    
+}
+
+message UpdatePlantByIdResponse{
+    bytes data = 1;   
+    bytes error = 2;  
+}
+
+message DeletePlantByIdRequest{
+    bytes data = 1;    
+}
+
+message DeletePlantByIdResponse{
+    bytes data = 1;    
+    bytes error = 2; 
+}

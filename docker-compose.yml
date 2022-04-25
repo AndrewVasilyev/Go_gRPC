@@ -1,0 +1,19 @@
+version: "4.7"
+
+services:
+  database:
+    container_name: plants_database_grpc
+    image: postgres:14
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=test_db_grpc
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_test_data_grpc:/var/lib/postgresql/data 
+
+volumes:
+  postgres_test_data_grpc:
+    name: postgres_test_data_grpc
